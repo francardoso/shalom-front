@@ -6,7 +6,7 @@ import Home from './views/Home';
 
 class AppRoutes extends Component{
     render(){
-        const isLogged = false;
+        const isLogged = true;
         return(
             <Router>
                 <Switch>

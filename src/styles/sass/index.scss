@@ -1,5 +1,49 @@
+@import './bootstrap.scss';
+@font-face {
+    font-family: 'Nunito-Regular';
+    src: url('../../assets/fonts/nunito/Nunito-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nunito-Bold';
+    src: url('../../assets/fonts/nunito/Nunito-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nunito-Light';
+    src: url('../../assets/fonts/nunito/Nunito-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+$shalomWine: #9C2F66;
 body{
+    background: #F5FAF4;
+    font-family: 'Nunito-Regular', sans-serif;
     margin: 0;
     padding: 0;  
     border: 0;
+}
+
+/********************** LOGIN **********************/
+#logo{
+    position: relative;
+    width: 180px;
+    left: 50%;
+    margin-left: -90px;
+    margin-top: 80px;
+}
+#loginContainer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    h2{
+        font-family: 'Nunito-Light';
+    }
+    input{
+        width: 100%;
+        margin: 15px 0;
+    }
 }
