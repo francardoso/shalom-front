@@ -16,7 +16,13 @@ class LoginContainer extends Component{
             body: JSON.stringify(credentials)
         })
         .then(response => response.json())
-        .then(result => console.log(result));
+        .then(result => {
+            if(result.error){
+                console.log('erro ao logar');
+            }else{
+                console.log('LOGOU');
+            }
+        });
         
     }
     render(){
