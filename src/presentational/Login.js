@@ -5,7 +5,7 @@ class Login extends Component{
     constructor(){
         super();
         this.state = {
-            email: '', 
+            login: '', 
             password: '' 
         };
 
@@ -17,10 +17,10 @@ class Login extends Component{
         const input = el.id;
 
         switch (input){
-            case 'email':
+            case 'login':
                 this.setState({
                     ...this.state,
-                    email: el.value
+                    login: el.value
                 });
                 break;
             case 'password':
@@ -44,7 +44,7 @@ class Login extends Component{
                 <img src={logo} alt="Shalom Logo" id="logo"/>
                 <div id="loginContainer">
                     <h2>Olá! Faça seu login</h2>
-                    <input id="email" name="email" placeholder="email" className="form-control" onChange={this.handleChange}/> 
+                    <input id="login" name="login" placeholder="email" className="form-control" onChange={this.handleChange}/> 
                     <input id="password" name="password" placeholder="senha" type="password" className="form-control" onChange={this.handleChange}/>
                     <button className="btn btn-primary" onClick={this.handleSubmit}>Acessar</button>
                 </div>
