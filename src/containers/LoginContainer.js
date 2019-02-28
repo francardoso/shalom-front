@@ -4,6 +4,9 @@ import Login from '../presentational/Login';
 class LoginContainer extends Component{
     constructor(){
         super();
+        this.state={
+            loginError: false
+        }
         this.loginAttempt = this.loginAttempt.bind(this);
     }
     loginAttempt(credentials){
@@ -18,15 +21,19 @@ class LoginContainer extends Component{
         .then(response => response.json())
         .then(result => {
             if(result.error){
-                console.log('erro ao logar');
+                this.setState({
+                    loginError: true
+                });
             }else{
-                console.log('LOGOU');
+                this.setState({
+                    loginError: false
+                });
             }
         });
         
     }
     render(){
-        return <Login loginAttempt={this.loginAttempt}/>
+        return <Login loginAttempt={this.loginAttempt} loginError={this.state.loginError}/>
     }
 };
 
