@@ -40,13 +40,15 @@ class LoginContainer extends Component{
                     loginError: false
                 },()=>{
                     this.props._setIsLogged({
-                        userId:'14848'
-                    })
+                        userId: result.userId
+                    });
+                    this.props.history.push('/home');
                 });
             }
         });
     }
     render(){
+        console.log('foo props2', this.props);
         return <Login loginAttempt={this.loginAttempt} loginError={this.state.loginError}/>
     }
 };

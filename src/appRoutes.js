@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import Login from './views/Login';
 import Home from './views/Home';
 
+const mapStateToProps = state =>({
+    isLogged: state.loginReducer.isLogged
+});
+
 class AppRoutes extends Component{
     render(){
-        const isLogged = true;
+        const isLogged = this.props.isLogged;
         return(
             <Router>
                 <Switch>
@@ -26,4 +31,4 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     )} />
 )
 
-export default AppRoutes;
+export default connect(mapStateToProps,null)(AppRoutes);
