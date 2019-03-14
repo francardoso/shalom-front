@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 
-import Header from '../presentational/Header';
+import LayoutContainer from '../containers/LayoutContainer';
 
 class Home extends Component{
     render(){
         return(
-            <Header/>
+            <LayoutContainer>
+                <div>mais coisa</div>
+            </LayoutContainer>
         )
     }
 };
