@@ -4,7 +4,7 @@ import {
 
 const initialState = {
     userId: null,
-    isLogged: false
+    isLogged: null
 };
 
 const loginReducer = (state = initialState, action) =>{
@@ -12,7 +12,7 @@ const loginReducer = (state = initialState, action) =>{
         case SET_IS_LOGGED:
             return {
                 ...state,
-                isLogged: true,
+                isLogged: action.payload.isLogged,
                 userId: action.payload.userId
             };
         default:

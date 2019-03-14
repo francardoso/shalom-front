@@ -20,14 +20,15 @@ class LoginContainer extends Component{
         }
         this.loginAttempt = this.loginAttempt.bind(this);
     }
-    loginAttempt(credentials){
+    loginAttempt(creds){
         fetch('http://localhost:3002/login', {
             method: "POST",
             headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
             },
-            body: JSON.stringify(credentials)
+            credentials: 'include',
+            body: JSON.stringify(creds)
         })
         .then(response => response.json())
         .then(result => {
@@ -40,7 +41,8 @@ class LoginContainer extends Component{
                     loginError: false
                 },()=>{
                     this.props._setIsLogged({
-                        userId: result.userId
+                        userId: result.userId,
+                        isLogged: true
                     });
                     this.props.history.push('/home');
                 });
@@ -48,7 +50,6 @@ class LoginContainer extends Component{
         });
     }
     render(){
-        console.log('foo props2', this.props);
         return <Login loginAttempt={this.loginAttempt} loginError={this.state.loginError}/>
     }
 };

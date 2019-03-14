@@ -1,17 +1,42 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {setIsLogged} from './actions/login';
 
 import Login from './views/Login';
 import Home from './views/Home';
+
+const mapDispatchToProps = dispatch =>({
+    _setIsLogged: (loginData) => dispatch(setIsLogged(loginData))  
+});
 
 const mapStateToProps = state =>({
     isLogged: state.loginReducer.isLogged
 });
 
 class AppRoutes extends Component{
+    componentWillMount(){
+        this.checkLogged();
+    }
+    checkLogged(){
+        fetch('http://localhost:3002/isLogged', {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
+        .then(response => response.json())
+        .then(result =>{
+            this.props._setIsLogged(result);
+        });
+    }
     render(){
         const isLogged = this.props.isLogged;
+        if(isLogged == null){
+            return <div></div>
+        }
         return(
             <Router>
                 <Switch>
@@ -31,4 +56,4 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     )} />
 )
 
-export default connect(mapStateToProps,null)(AppRoutes);
+export default connect(mapStateToProps,mapDispatchToProps)(AppRoutes);
