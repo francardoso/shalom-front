@@ -34,7 +34,7 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav" ref={this.navBarCollapse}>
                     <ul className="navbar-nav" ref>
                         <li className="nav-item active">
-                            <Link className="nav-link" to={'#'}>Estoque</Link>
+                            <Link className="nav-link" to={'/stock'}>Estoque</Link>
                         </li>
                     </ul>
                 </div>
