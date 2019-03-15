@@ -22,7 +22,7 @@ class AppRoutes extends Component{
     }
     checkLogged(){
         fetch('http://localhost:3002/isLogged', {
-            method: "POST",
+            method: "GET",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

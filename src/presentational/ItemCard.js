@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const ItemCard = () => {
+const ItemCard = (props) => {
+    const {_id, name, description} = props.item;
     return(
-        <div class="card" style={{"width":"18rem"}}>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <Link to={'#'} className="btn btn-info">Detalhes</Link>
+        <div className="card" style={{"width":"18rem"}}>
+            <div className="card-body">
+                <h5 className="card-title">{name}</h5>
+                <p className="card-text">{description}</p>
+                <Link to={`/stock/${_id}`} className="btn btn-info">Detalhes</Link>
             </div>
         </div>
     )
