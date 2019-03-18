@@ -9,7 +9,7 @@ class NoMatch extends Component{
                 <p className="lead">Desculpe, essa página não existe.</p>
                 <hr className="my-4"/>
                 <p>Tente voltar para a página inicial.</p>
-                <Link to={'/'} className='btn btn-primary btn-lg'>Início</Link>
+                <Link to={'/home'} className='btn btn-primary btn-lg'>Início</Link>
             </div>
         )
     }

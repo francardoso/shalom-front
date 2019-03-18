@@ -24,6 +24,10 @@ body{
     margin: 0;
     padding: 0;  
     border: 0;
+    .container{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 }
 
 /********************** LOGIN **********************/
@@ -45,5 +49,17 @@ body{
     input{
         width: 100%;
         margin: 15px 0;
+    }
+}
+
+/********************** STOCK **********************/
+#addNewItem{
+    margin-left: 65%;
+}
+.card-columns{
+    -webkit-column-count: 1;
+    column-count: 1;
+    .card{
+        margin: 0.75rem;
     }
 }

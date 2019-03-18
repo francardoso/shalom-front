@@ -6,7 +6,9 @@ class LayoutContainer extends Component{
         return (
             <React.Fragment>
                 <Header/>
-                {this.props.children}
+                <div className="container">
+                    {this.props.children}
+                </div>
             </React.Fragment>
         )
     }

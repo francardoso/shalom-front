@@ -7,7 +7,7 @@ class AddItem extends Component{
     render(){
         return(
            <LayoutContainer>
-               <AddItemContainer/>
+               <AddItemContainer history={this.props.history}/>
            </LayoutContainer>
         )
     }

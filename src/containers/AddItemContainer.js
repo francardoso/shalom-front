@@ -3,6 +3,10 @@ import React,{Component} from 'react';
 import AddItemForm from '../presentational/AddItemForm';
 
 class AddItemContainer extends Component{
+    constructor(){
+        super();
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
     handleSubmit(product){
         fetch('http://localhost:3002/addItem', {
             method: "POST",
@@ -15,7 +19,7 @@ class AddItemContainer extends Component{
         })
         .then(response => response.json())
         .then(result =>{
-            console.log('foo result', result);
+            this.props.history.push('/stock');
         });
     }
     render(){

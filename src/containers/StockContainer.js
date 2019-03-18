@@ -39,17 +39,19 @@ class StockContainer extends Component{
        const items = this.props.items;
         return(
             <React.Fragment>
-                    <div className="card-columns">
-                        {
-                            items.map(item=>{
-                                return <ItemCard 
-                                        key={item._id}
-                                        item={item}
-                                    />
-                            })
-                        }
-                   </div>
-                <Link to={'/stock/addItem'} className='btn btn-primary'>Adicionar novo produto</Link>
+                <div className="row">
+                    <Link to={'/stock/addItem'} className='btn btn-outline-primary' id='addNewItem'>Adicionar novo produto</Link>
+                </div>
+                <div className="card-columns">
+                    {
+                        items.map(item=>{
+                            return <ItemCard 
+                                    key={item._id}
+                                    item={item}
+                                />
+                        })
+                    }
+                </div>
             </React.Fragment>
         )
     }

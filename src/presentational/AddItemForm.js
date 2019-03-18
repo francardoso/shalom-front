@@ -16,7 +16,6 @@ class AddItemForm extends Component{
     }
     handleChange(event){
         event.preventDefault();
-        console.log('event value', event.target.value, event.target.name);
         const inputName = event.target.name;
         switch(inputName){
             case 'name':
@@ -66,7 +65,7 @@ class AddItemForm extends Component{
     render(){
         const {name, description, in_stock, image_url} = this.state.product;
         return(
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} autoComplete="off">
                 <div className="form-group">
                     <label className="col-sm-2 col-form-label">Nome do produto*</label>
                     <div className="col-sm-10">
@@ -121,7 +120,7 @@ class AddItemForm extends Component{
                     </div>
                 </div>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-primary col-sm-10">Adicionar</button>
+                    <button type="submit" className="btn btn-outline-primary col-sm-10">Adicionar</button>
                 </div>
             </form>
         ) 

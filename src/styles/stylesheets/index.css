@@ -11423,9 +11423,14 @@ body {
   padding: 0;
   border: 0;
 }
+/* line 27, ../sass/index.scss */
+body .container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
 /********************** LOGIN **********************/
-/* line 30, ../sass/index.scss */
+/* line 34, ../sass/index.scss */
 #logo {
   position: relative;
   width: 180px;
@@ -11434,19 +11439,35 @@ body {
   margin-top: 80px;
 }
 
-/* line 37, ../sass/index.scss */
+/* line 41, ../sass/index.scss */
 #loginContainer {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-/* line 42, ../sass/index.scss */
+/* line 46, ../sass/index.scss */
 #loginContainer h2 {
   font-family: 'Nunito-Light';
 }
-/* line 45, ../sass/index.scss */
+/* line 49, ../sass/index.scss */
 #loginContainer input {
   width: 100%;
   margin: 15px 0;
+}
+
+/********************** STOCK **********************/
+/* line 56, ../sass/index.scss */
+#addNewItem {
+  margin-left: 65%;
+}
+
+/* line 59, ../sass/index.scss */
+.card-columns {
+  -webkit-column-count: 1;
+  column-count: 1;
+}
+/* line 62, ../sass/index.scss */
+.card-columns .card {
+  margin: 0.75rem;
 }
